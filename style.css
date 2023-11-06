@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins";
+}
+
+header {
+  display: flex;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 30px;
+  /* grabient.com */
+  background-image: linear-gradient(
+    90deg,
+    #d9afd9 0%,
+    #97d9e1 50%,
+    #3bc0a3 100%
+  );
+}
+
+.right {
+  display: flex;
+}
+
+header .right .menu-bar {
+  display: none;
+  font-size: 2rem;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  align-items: left;
+  padding-left: 10%;
+  width: 30%;
+  height: 150px;
+  font-weight: 550;
+  line-height: 2rem;
+  background-image: linear-gradient(90deg, #97dae183 50%, #3bc0a38f 100%);
+  border-radius: 0 0 10px 10px;
+  color: #0c354d;
+}
+
+.dropdown-menu {
+  width: 100%;
+  display: none;
+  justify-content: flex-end;
+  position: sticky;
+  top: 3.5rem;
+  z-index: 10;
+}
+
+.active {
+  display: flex !important;
+}
+@media screen and (max-width: 768px) {
+  .buttons {
+    display: none;
+  }
+  .dropdown-menu {
+    display: flex;
+  }
+
+  header .right .menu-bar {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  header .right .menu-bar {
+    font-size: 1.7rem;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header input {
+    width: 40%;
+  }
+}
+
+header input {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.206);
+}
+
+header button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+}
+
+header div button:nth-child(1) {
+  background: black;
+}
+header div button:nth-child(2) {
+  background: blue;
+}
+header div button:nth-child(3) {
+  background: red;
+}
+
+/* Kategoriler */
+
+section {
+  padding: 50px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.category {
+  min-width: 200px;
+  max-width: 265px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+@media (max-width: 800px) {
+  .categories {
+    justify-content: center;
+  }
+
+  .category {
+    min-width: 150px;
+    max-width: 250px;
+  }
+  .category h2 {
+    font-size: 13px !important;
+  }
+}
+
+.category img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.category h2 {
+  position: absolute;
+  bottom: 10px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px 30px;
+}
+
+/* Ürünler */
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 120px;
+  margin-top: 40px;
+}
+
+.card {
+  width: 250px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 9px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.card .img-wrapper {
+  width: 100%;
+  height: 200px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* contain: büyüklüğü aynı tutar ama oranı bozmadan */
+  border-radius: 10px;
+}
+
+.card .info {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.card .info span {
+  color: greenyellow;
+}
+
+.card .info button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(
+    90deg,
+    #d9afd9 0%,
+    #97d9e1 50%,
+    #3bc0a3 100%
+  );
+  transition: filter 0.4s;
+}
+
+.card .info button {
+  filter: drop-shadow(0 0 20px pink);
+}
+
+@media (max-width: 800px) {
+  .products {
+    justify-content: center;
+  }
+
+  .product {
+    min-width: 100px;
+    max-width: 250px;
+  }
+  .products h2 {
+    font-size: 13px !important;
+  }
+}
+
+/* Sepet modal'ı */
+.modal-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.322);
+  /* çocuk elemanı merkeze hizalar */
+  display: none;
+}
+
+.active {
+  display: grid !important;
+  place-items: center;
+}
+
+.modal {
+  background: #fff;
+  width: 70%;
+  height: 60%;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.btn-wrapper #close-btn {
+  width: 40px;
+  cursor: pointer;
+  transition: all, 0.3s;
+}
+
+#btn-wrapper img:hover {
+  scale: 0.95;
+  filter: drop-shadow(0 0 0 20px red);
+}
+
+#count,
+#price {
+  color: rgb(125, 184, 38);
+  font-weight: bold;
+}
+
+#list {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: 30px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+#list .item img {
+  width: 60px;
+  border-radius: 7px;
+}
+
+#list .item #delete-img {
+  width: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#list .item #delete-img:hover {
+  transform: rotate(15deg);
+}
